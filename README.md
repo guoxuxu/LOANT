@@ -31,4 +31,4 @@ My conda version is 4.9.2
 2. Ptacek
 3. SemEval18
 4. iSarcasm
-#### Steps:
+#### Processing Steps:
