@@ -24,7 +24,7 @@ My conda version is 4.9.2
 ```python extragradient.py```
 
 <!--<img src="./img/First_Order.png" width="200"> aaaaaa  | <img src="./img/First_Order.png" width="200"> aaaaaa -->
-![Vanilla gradient descent](./img/First_Order.png){ width=50% }
+![Vanilla gradient descent](./img/First_Order.png){:height="36px" width="36px"}
 
 ## Sarcasm Datasets pre-processing
 #### Source:
