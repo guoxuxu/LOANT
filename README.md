@@ -13,7 +13,7 @@ My conda version is 4.9.2
 
 #### Steps:
 1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](https://render.githubusercontent.com/render/math?math=\Lambda=[[40,0],[0,1]]).
-2. then generate a semi-definite matrix ![](https://render.githubusercontent.com/render/math?math=A\in\mathbb{R}^{2\times2}) (![](https://render.githubusercontent.com/render/math?math=A=Q\LambdaQ^{T})), a column vector b and a scalar c.
+2. then generate a semi-definite matrix ![](https://render.githubusercontent.com/render/math?math=A\in\mathbb{R}^{2\times2}) (![](https://render.githubusercontent.com/render/math?math=A=Q\Lambda%20Q^{T})), a column vector b and a scalar c.
 3. create a grid of ![](https://render.githubusercontent.com/render/math?math=(w_0,w_1)).
 4. generate the loss value ![](https://render.githubusercontent.com/render/math?math=f(w)) and plot the loss contour.
 5. perform **_gradient descent_** with initial point ![](https://render.githubusercontent.com/render/math?math=(w_0=0,w_1=-0.15)) and learning rate ![](https://render.githubusercontent.com/render/math?math=\eta=0.025), plot the trajectory of w.
