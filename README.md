@@ -23,7 +23,7 @@ My conda version is 4.9.2
 #### Run
 ```python extragradient.py```
 
-![Vanilla gradient descent](./img/First_Order.png)
+![Vanilla gradient descent](./img/First_Order.png=100x)
 
 ## Sarcasm Datasets pre-processing
 #### Source:
