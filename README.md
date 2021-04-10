@@ -23,6 +23,8 @@ My conda version is 4.9.2
 #### Run
 ```python extragradient.py```
 
+![](./img/First_Ordr.png)
+
 ## Sarcasm Datasets pre-processing
 #### Source:
 1. Ghosh
