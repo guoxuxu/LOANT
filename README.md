@@ -9,16 +9,24 @@ My conda version is 4.9.2
 3. install pytorch 1.6.1
 4. pip install -r requirements.txt
 
-## Toy exmpale for optimizing the 2D convex problem ![](http://www.sciweavers.org/tex2img.php?eq=f(w)=w^{T}Aw%2Bb^{T}w%2Bc&bc=White&fc=Black&im=jpg&fs=12) with extragradient.
+## Toy exmpale for optimizing the 2D convex problem ![](https://render.githubusercontent.com/render/math?math=f(w)=w^{T}Aw%2Bb^{T}w%2Bc) with extragradient.
 
 #### Steps:
-1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](http://www.sciweavers.org/tex2img.php?eq=\Lambda=[[40,0],[0,1]]&bc=White&fc=Black&im=jpg&fs=12).
-2. then generate a semi-definite matrix ![](http://www.sciweavers.org/tex2img.php?eq=A\in\mathbb{R}^{2\times2}&bc=White&fc=Black&im=jpg&fs=12}) (![](http://www.sciweavers.org/tex2img.php?eq=A=Q\LambdaQ^{T}&bc=White&fc=Black&im=jpg&fs=12)), a column vector b and a scalar c.
-3. create a grid of ![](http://www.sciweavers.org/tex2img.php?eq=(w_0,w_1)&bc=White&fc=Black&im=jpg&fs=12).
-4. generate the loss value ![](http://www.sciweavers.org/tex2img.php?eq=f(w)&bc=White&fc=Black&im=jpg&fs=12) and plot the loss contour.
-5. perform **_gradient descent_** with initial point ![](http://www.sciweavers.org/tex2img.php?eq=(w_0=0,w_1=-0.15)&bc=White&fc=Black&im=jpg&fs=12) and learning rate ![](http://www.sciweavers.org/tex2img.php?eq=\eta=0.025&bc=White&fc=Black&im=jpg&fs=12), plot the trajectory of w.
+1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](https://render.githubusercontent.com/render/math?math=\Lambda=[[40,0],[0,1]]).
+2. then generate a semi-definite matrix ![](https://render.githubusercontent.com/render/math?math=A\in\mathbb{R}^{2\times2}) (![](https://render.githubusercontent.com/render/math?math=A=Q\LambdaQ^{T}})), a column vector b and a scalar c.
+3. create a grid of ![](https://render.githubusercontent.com/render/math?math=(w_0,w_1)).
+4. generate the loss value ![](https://render.githubusercontent.com/render/math?math=f(w)) and plot the loss contour.
+5. perform **_gradient descent_** with initial point ![](https://render.githubusercontent.com/render/math?math=(w_0=0,w_1=-0.15)) and learning rate ![](https://render.githubusercontent.com/render/math?math=\eta=0.025), plot the trajectory of w.
 6. perform **_first-order extragradient_** with the same initial point and learning rate, plot the trajectory of w.
 7. perform **_Full hessian extragradient_** with the same initial point and learning rate, plot the trajectory of w.
 
 #### Run
 ```python extragradient.py```
+
+## Sarcasm Datasets pre-processing
+#### Source:
+1. Ghosh
+2. Ptacek
+3. SemEval18
+4. iSarcasm
+#### Steps:
