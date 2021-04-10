@@ -9,7 +9,7 @@ My conda version is 4.9.2
 3. install pytorch 1.6.1
 4. pip install -r requirements.txt
 
-## Toy exmpale for optimizing the 2D convex problem ![](https://render.githubusercontent.com/render/math?math=f(w)=w^{T}Aw%2Bb^{T}w%2Bc) with extragradient.
+## Toy exmpale for minimizing the 2D function ![](https://render.githubusercontent.com/render/math?math=f(w)=w^{T}Aw%2Bb^{T}w%2Bc) with extragradient.
 
 #### Steps:
 1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](https://render.githubusercontent.com/render/math?math=\Lambda=[[40,0],[0,1]]).
