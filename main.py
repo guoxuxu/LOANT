@@ -130,10 +130,11 @@ if __name__ == '__main__':
     parser.add_argument("-wd", type=float, default=0)
     parser.add_argument("-batch_size", type=int, default=128)
     parser.add_argument("-epochs", type=int, default=4)
+    parser.add_argument("-max_len", type=int, default=100)
     args = parser.parse_args()
 
     # get data
-    tokenizer, num_added_tokens = init_bert_tokenizer(add_new_tokens=args.add_emoji)
+    tokenizer, num_added_tokens = init_bert_tokenizer(add_new_tokens=False)
     source_data_path = os.path.join('Data', args.source)
     target_data_path = os.path.join('Data', args.target)
     source_train_dataframe = pd.read_csv(os.path.join(source_data_path, 'train_balanced.csv'))  # balanced to be 51512
@@ -166,7 +167,7 @@ if __name__ == '__main__':
 
     # init model
     set_seed(args.seed)
-    model = ANT(resize=args.add_emoji, num_tokens=30647).cuda(args.cuda)
+    model = ANT(resize=False, num_tokens=30647).cuda(args.cuda)
 
     no_decay = ['bias', 'LayerNorm.weight']
     # Separate the `weight` parameters from the `bias` parameters.

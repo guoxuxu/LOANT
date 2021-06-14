@@ -94,9 +94,13 @@ class ANT(nn.Module):
     def evaluate(self, inputs, masks, labels, domain):
         outs = self.bert_model(input_ids=inputs, attention_mask=masks)
         cls = outs[0][:, 0, :]
-        domain_specific_repr = self.src_pooler(cls) if domain == 'source' else self.tgt_pooler(cls)
         shared_repr = self.share_pooler(cls)
-        outs = self.src_aggre_cls(torch.cat((domain_specific_repr, shared_repr), dim=1))
+        if domain == 'source':
+            domain_specific_repr = self.src_pooler(cls)
+            outs = self.src_aggre_cls(torch.cat((domain_specific_repr, shared_repr), dim=1))
+        else:
+            domain_specific_repr = self.tgt_pooler(cls)
+            outs = self.tgt_aggre_cls(torch.cat((domain_specific_repr, shared_repr), dim=1))
         loss = nn.CrossEntropyLoss()(outs, labels)
         return loss, outs
 
