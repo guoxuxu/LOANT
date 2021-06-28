@@ -4,7 +4,6 @@ import torch
 import numpy
 import random
 from datetime import datetime
-import time
 
 
 def format_time():
