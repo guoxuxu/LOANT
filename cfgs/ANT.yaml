@@ -1,0 +1,12 @@
+batch_size: 128
+log_every: 20
+max_sen_length: 100
+mixed_precision_trainig: true
+model_name: ANT
+optimize_bert: false
+optimize_cls_repr: false
+pretrained_model: bert
+sample_selection: false
+task_pretrained: false
+task_pretrained_weights: null
+training_epochs: 5
