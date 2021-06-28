@@ -22,22 +22,6 @@ code for NAACL 2021 paper [Latent-Optimized Adversarial Neural Transfer for Sarc
 
 For any questions regarding the code and paper, email me [Xu Guo](mailto:xu008@e.ntu.edu.sg?subject=[GitHub]%20LOANT%20Sarcasm%Detection)
 
-## Toy exmpale for minimizing the 2D function ![](https://render.githubusercontent.com/render/math?math=f(w)=w^{T}Aw%2Bb^{T}w%2Bc) with extragradient.
-
-#### Steps:
-1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](https://render.githubusercontent.com/render/math?math=\Lambda=[[40,0],[0,1]]).
-2. then generate a semi-definite matrix ![](https://render.githubusercontent.com/render/math?math=A\in\mathbb{R}^{2\times2}) (![](https://render.githubusercontent.com/render/math?math=A=Q\Lambda%20Q^{T})), a column vector b and a scalar c.
-3. create a grid of ![](https://render.githubusercontent.com/render/math?math=(w_0,w_1)).
-4. generate the loss value ![](https://render.githubusercontent.com/render/math?math=f(w)) and plot the loss contour.
-5. perform **_gradient descent_** with initial point ![](https://render.githubusercontent.com/render/math?math=(w_0=0,w_1=-0.15)) and learning rate ![](https://render.githubusercontent.com/render/math?math=\eta=0.025), plot the trajectory of w.
-6. perform **_first-order extragradient_** with the same initial point and learning rate, plot the trajectory of w.
-7. perform **_Full hessian extragradient_** with the same initial point and learning rate, plot the trajectory of w.
-
-#### Run
-```python extragradient.py```
-
-<img src="./img/Gradient_Descent.png" width="250"/><img src="./img/First_Order.png" width="250"/><img src="./img/Second_Order.png" width="250"/>
-
 
 ## Sarcasm Detection Task
 > To reproduce the results in paper, see ```Reproduce_results.ipynb```
@@ -55,8 +39,26 @@ download the [compressed python virtual env](https://drive.google.com/file/d/1hS
 3. SemEval18: raw data downloaded from: [link](https://github.com/Cyvhee/SemEval2018-Task3/tree/master/datasets)
 4. iSarcasm: raw data given by the author and is also included under ```data/iSarcasm/raw```
 
-#### My Processing Steps:
+#### My Pre-processing Steps:
 1. detect language, filter out non-english tweets
 2. lexical normalization
 3. filter out duplicate tweets across datasets
 4. up-sampling target datasets
+
+
+## Toy example for minimizing the 2D function ![](https://render.githubusercontent.com/render/math?math=f(w)=w^{T}Aw%2Bb^{T}w%2Bc) with extragradient.
+
+#### Steps:
+1. manually create a matrix with condition number of 40 (to control the loss landscape to be eclipse): ![](https://render.githubusercontent.com/render/math?math=\Lambda=[[40,0],[0,1]]).
+2. then generate a semi-definite matrix ![](https://render.githubusercontent.com/render/math?math=A\in\mathbb{R}^{2\times2}) (![](https://render.githubusercontent.com/render/math?math=A=Q\Lambda%20Q^{T})), a column vector b and a scalar c.
+3. create a grid of ![](https://render.githubusercontent.com/render/math?math=(w_0,w_1)).
+4. generate the loss value ![](https://render.githubusercontent.com/render/math?math=f(w)) and plot the loss contour.
+5. perform **_gradient descent_** with initial point ![](https://render.githubusercontent.com/render/math?math=(w_0=0,w_1=-0.15)) and learning rate ![](https://render.githubusercontent.com/render/math?math=\eta=0.025), plot the trajectory of w.
+6. perform **_first-order extragradient_** with the same initial point and learning rate, plot the trajectory of w.
+7. perform **_Full hessian extragradient_** with the same initial point and learning rate, plot the trajectory of w.
+
+#### Run
+```python extragradient.py```
+
+<img src="./img/Gradient_Descent.png" width="250"/><img src="./img/First_Order.png" width="250"/><img src="./img/Second_Order.png" width="250"/>
+
